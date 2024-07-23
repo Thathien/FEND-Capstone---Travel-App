@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Travel app</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a
+                    href="/"
+                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+                >
+                    <img
+                        class="bi me-2"
+                        width="80"
+                        height="80"
+                        src="<%=require('/src/client/images/logo.png') %>"
+                        alt="logo"
+                    />
+                    <span class="fs-2">Travel App</span>
+                </a>
+                <ul class="nav nav-pills align-items-center">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </header>
+        </div>
+
+        <main>
+            <section>
+                <div class="container">
+                    <div>
+                        <h1>Travel Planner</h1>
+                        <ul class="d-flex flex-column mb-3 js-planNew"></ul>
+                    </div>
+                    <div class="plan">
+                        <h2 class="fs-4 mb-3 mt-3">Pick Location</h2>
+                        <div class="plan_location">
+                            <input
+                                type="text"
+                                autocomplete="off"
+                                class="form-control plan__input js-input"
+                            />
+                        </div>
+                        <div
+                            class="small text-danger pl-1 mt-1 d-none js-error"
+                        >
+                            Enter a location
+                        </div>
+                        <h2 class="fs-4 mb-3 mt-3">Pick date</h2>
+                        <div class="plan_date">
+                            <div class="plan_date_start">
+                                <input
+                                    onfocus="(this.type='date')"
+                                    type="text"
+                                    class="form-control InputButton__button w-100 text-ellipsis js-dateStart"
+                                    placeholder="Start date"
+                                    aria-placeholder="Start date"
+                                />
+                            </div>
+                            <div>
+                                <span>To</span>
+                            </div>
+                            <div class="plan_date_end">
+                                <input
+                                    onfocus="(this.type='date')"
+                                    type="text"
+                                    class="form-control InputButton__button w-100 text-ellipsis js-dateEnd"
+                                    placeholder="End date"
+                                />
+                            </div>
+                        </div>
+                        <h2 class="fs-4 mb-3 mt-3">Note</h2>
+                        <textarea
+                            class="form-control js-planNote"
+                            rows="3"
+                            placeholder="Note"
+                            name="note"
+                        ></textarea>
+                        <div class="plan_button">
+                            <button
+                                type="button"
+                                class="btn btn-outline-danger pl-1 mt-3 js-submit"
+                            >
+                                <span
+                                    class="spinner-border spinner-border-sm d-none"
+                                    role="status"
+                                    aria-hidden="true"
+                                ></span>
+                                Create Plan
+                            </button>
+                        </div>
+                    </div>
+                    <div class="js-savedPlan">
+                        <h1>List Saved Plans</h1>
+                        <ul class="d-flex flex-column mb-3 js-trip"></ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="text-center text-body-secondary">© 2024 Company, Inc</p>
+        </footer>
+    </body>
+    <script>
+        // Check that service workers are supported
+        if ("serviceWorker" in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js").then(
+                    (registration) => {
+                        console.log(
+                            "ServiceWorker registration successful with scope: ",
+                            registration.scope
+                        );
+                    },
+                    (err) => {
+                        console.log("ServiceWorker registration failed: ", err);
+                    }
+                );
+            });
+        }
+    </script>
+</html>

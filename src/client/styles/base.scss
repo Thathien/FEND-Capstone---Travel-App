@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 2;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+#results {
+    font-size: 20px;
+    display: none;
+}
+
+.is-show {
+    display: block !important;
+}
+
+button {
+    background-color: #7fff00;
+    border: solid 1px;
+    padding: 10px;
+}
+
+button:hover {
+    background-color: #649534;
+    border: solid 1px #649534;
+}

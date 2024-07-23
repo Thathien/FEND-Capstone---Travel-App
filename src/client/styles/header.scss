@@ -1,0 +1,46 @@
+header {
+    display: flex;
+    padding: 10px 40px;
+}
+.header__menu {
+    position: relative;
+    display: flex;
+    margin-left: 100px;
+}
+.logo {
+    width: 100px;
+    object-fit: cover;
+}
+  
+h1 {
+    font-weight: bold;
+    font-size: 36px;
+}
+  
+.header__btn {
+    position: absolute;
+    background-color: #c6eaeb;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 20px;
+    align-self: center;
+    right: 40px;
+}
+
+.header__menu a {
+    padding: 20px;
+    margin: auto 15px;
+    border: 1px;
+    border-radius: 10px;
+    background-color: #eee;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+
+  
+.header__btn:hover {
+    cursor: pointer;
+}
